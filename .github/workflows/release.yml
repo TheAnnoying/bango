@@ -35,7 +35,11 @@ jobs:
 
       - name: Build
         run: |
-          GOOS=${{ matrix.os }} GOARCH=${{ matrix.arch }} go build -o bango-${{ matrix.os }}-${{ matrix.arch }} ./...
+          if [ "${{ matrix.os }}" = "windows" ]; then
+            EXT=".exe"
+          fi
+
+          GOOS=${{ matrix.os }} GOARCH=${{ matrix.arch }} go build -o bango-${{ matrix.os }}-${{ matrix.arch }}${EXT} .
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
