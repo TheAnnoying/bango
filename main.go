@@ -32,8 +32,18 @@ func redirectHandler(w http.ResponseWriter, r *http.Request) {
 
 	bang, ok := Bangs[trigger]
 	if !ok {
+		defaultSearchPrefix := os.Getenv("DEFAULT_SEARCH_PREFIX")
+		defaultSearchSuffix := os.Getenv("DEFAULT_SEARCH_SUFFIX")
+
 		bang = Bang{
-			Prefix: "https://www.google.com/search?q=",
+			Prefix: defaultSearchPrefix,
+			Suffix: defaultSearchSuffix,
+		}
+
+		if defaultSearchPrefix == "" {
+			bang = Bang{
+				Prefix: "https://www.google.com/search?q=",
+			}
 		}
 	}
 
