@@ -1,0 +1,44 @@
+name: Build and Push to GHCR
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract Version Tag
+        id: get_version
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Build and Push (Versioned)
+        env:
+          IMAGE_TAG: ${{ steps.get_version.outputs.VERSION }}
+        run: |
+          docker compose build
+          docker compose push
+
+      - name: Build and Push (Latest)
+        env:
+          IMAGE_TAG: latest
+        run: |
+          docker compose build
+          docker compose push
