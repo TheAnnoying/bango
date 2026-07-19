@@ -14,6 +14,11 @@
 > ```
 > http://localhost:8479/?q=%s
 > ```
+> If you don't want to run bango yourself, use my public instance:
+>
+> ```
+> https://bango.theannoying.dev/?q=%s
+> ```
 
 ### Environment Variables
 | Variable | Usage | Default Value |
