@@ -24,6 +24,7 @@
 | משתנה | שימוש | ערך ברירת מחדל |
 | -------- | ----- | ------------- |
 | PORT | הפורט שעליו בנגו ירוץ | 8479 |
+| BANG_PREFIX | הקידומת של בנגים בשאילתות חיפוש | ! |
 | DEFAULT_SEARCH_PREFIX | החלק של הקישור שמגיע לפני שאילתת החיפוש | `https://www.google.com/search?q=` |
 | DEFAULT_SEARCH_SUFFIX | שאר הקישור, החלק שאחרי שאילתת החיפוש | כלום. דוגמאות: `&submit_search=`, `&searchon=all&suite=all&section=all` |
 

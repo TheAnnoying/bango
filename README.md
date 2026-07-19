@@ -24,6 +24,7 @@
 | Variable | Usage | Default Value |
 | -------- | ----- | ------------- |
 | PORT | The port that bango will run on | 8479 |
+| BANG_PREFIX | Prefix used for bangs in search queries | ! |
 | DEFAULT_SEARCH_PREFIX | The URL that comes before the search term if no bang is present | `https://www.google.com/search?q=` |
 | DEFAULT_SEARCH_SUFFIX | The rest of the URL after the search term if no bang is present | None by default. Examples: `&submit_search=`, `&searchon=all&suite=all&section=all` |
 
