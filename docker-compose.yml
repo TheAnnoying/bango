@@ -1,0 +1,6 @@
+services:
+  bango:
+    build: .
+    image: ghcr.io/TheAnnoying/bango:1.0.0
+    ports:
+      - "8479:8479"
