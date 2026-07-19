@@ -1,6 +1,6 @@
 services:
   bango:
     build: .
-    image: ghcr.io/TheAnnoying/bango:1.0.0
+    image: ghcr.io/theannoying/bango:${IMAGE_TAG:-latest}
     ports:
       - "8479:8479"
