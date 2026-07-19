@@ -38,6 +38,13 @@ Run the binary using `./bango`
 </details>
 
 <details>
+<summary>Pre-built binary</summary>
+
+Download and run a binary from [the latest release](https://github.com/TheAnnoying/bango/releases/latest)
+
+</details>
+
+<details>
 <summary>Docker Compose</summary>
 
 ### Docker Compose
