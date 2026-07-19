@@ -21,9 +21,14 @@ func redirectHandler(w http.ResponseWriter, r *http.Request) {
 	var trigger string
 	var searchParts []string
 
+	prefix := os.Getenv("BANG_PREFIX")
+	if prefix == "" {
+		prefix = "!"
+	}
+
 	for _, part := range parts {
-		if strings.HasPrefix(part, "!") && len(part) > 1 && trigger == "" {
-			trigger = strings.ToLower(part[1:])
+		if strings.HasPrefix(part, prefix) && len(part) > len(prefix) && trigger == "" {
+			trigger = strings.ToLower(part[len(prefix):])
 			continue
 		}
 
