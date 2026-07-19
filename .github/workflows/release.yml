@@ -39,7 +39,8 @@ jobs:
             EXT=".exe"
           fi
 
-          GOOS=${{ matrix.os }} GOARCH=${{ matrix.arch }} go build -o bango-${{ matrix.os }}-${{ matrix.arch }}${EXT} .
+          go generate
+          GOOS=${{ matrix.os }} GOARCH=${{ matrix.arch }} CGO_ENABLED=0 go build -trimpath -ldflags="-s -w" -o bango-${{ matrix.os }}-${{ matrix.arch }}${EXT} .
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
