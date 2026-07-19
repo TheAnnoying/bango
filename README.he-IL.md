@@ -3,7 +3,7 @@
 <p align="center">חיפוש עם בנגים</p>
 
 <p align="center">
-    [English]
+    [<a href="https://github.com/TheAnnoying/bango/blob/main/README.md">English</a>]
 </p>
 
 > הבנגים נלקחו מ[הליום](https://helium.computer/bangs).
