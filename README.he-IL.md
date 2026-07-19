@@ -21,3 +21,15 @@
 | PORT | הפורט שעליו בנגו ירוץ | 8479 |
 | DEFAULT_SEARCH_PREFIX | החלק של הקישור שמגיע לפני שאילתת החיפוש | `https://www.google.com/search?q=` |
 | DEFAULT_SEARCH_SUFFIX | שאר הקישור, החלק שאחרי שאילתת החיפוש | כלום. דוגמאות: `&submit_search=`, `&searchon=all&suite=all&section=all` |
+
+### דוקר
+צרו קובץ הנקרא `docker-compose.yml` עם התוכן הבא:
+```yml
+services:
+  bango:
+    image: ghcr.io/theannoying/bango:latest
+    ports:
+      - "8479:8479"
+    restart: unless-stopped
+```
+הריצו בעזרת הפקודה: `docker compose up -d`
