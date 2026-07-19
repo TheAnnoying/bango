@@ -1,11 +1,23 @@
-# bango
+<h1 align="center">bango</h1>
 
-A lightweight search redirect service powered by search bangs.
+<p align="center">Search with bangs</p>
 
-Bangs are sourced from [Helium](https://helium.computer/bangs).
+<p align="center">
+    [<a href="https://github.com/TheAnnoying/bango/blob/main/README.he-IL.md">עברית</a>]
+</p>
 
-Add Bango as a custom search engine in your browser:
-```
-http://<ip-address>:<port>/?q=%s
-```
-You will be able to use bangs directly from your browser search bar.
+> Bangs are sourced from [Helium](https://helium.computer/bangs).
+
+> [!TIP]
+> After running, add bango to your browser using a URL like so:
+>
+> ```
+> http://localhost:8479/?q=%s
+> ```
+
+### Environment Variables
+| Variable | Usage | Default Value |
+| -------- | ----- | ------------- |
+| PORT | The port that bango will run on | 8479 |
+| DEFAULT_SEARCH_PREFIX | The URL that comes before the search term if no bang is present | `https://www.google.com/search?q=` |
+| DEFAULT_SEARCH_SUFFIX | The rest of the URL after the search term if no bang is present | None by default. Examples: `&submit_search=`, `&searchon=all&suite=all&section=all` |
