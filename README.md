@@ -29,11 +29,12 @@ Install [Go 1.26+](https://go.dev/doc/install)
 git clone https://github.com/TheAnnoying/bango.git
 cd bango
 go generate
-CGO_ENABLED=0 go build -o bango
+go build -trimpath -ldflags="-s -w" -o bango
 ```
 > If you're on Windows, rename the file to end with `.exe`
 
-Run the binary using `./bango`
+Set CGO_ENABLED=0 as an environment variable to produce a statically linked binary (which the prebuilt binary and docker image use).
+Run the binary using `./bango` (Linux, macOS) or `.\bango.exe` (Windows)
 
 </details>
 
@@ -48,7 +49,7 @@ Download and run a binary from [the latest release](https://github.com/TheAnnoyi
 <summary>Docker Compose</summary>
 
 ### Docker Compose
-Create a file `docker-compose.yml` with the following:
+Create a file named `docker-compose.yml`:
 ```yml
 services:
   bango:
